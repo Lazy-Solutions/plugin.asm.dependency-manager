@@ -45,7 +45,7 @@ namespace plugin.asm.dependency_manager.Blacklist
                 GUI.SetNextControlName("blacklist-" + index);
                 settings.paths[index] = GUI.TextField(new Rect(position.x + 3, position.y + 2, position.width - 3 - 28, position.height - 4), settings.paths[index]);
 
-                if (GUI.Button(new Rect(position.xMax - 22, position.y, 22, position.height), EditorGUIUtility.IconContent("d_FolderOpened"), new GUIStyle(GUI.skin.button) { padding = new RectOffset(2, 2, 2, 2) }))
+                if (GUI.Button(new Rect(position.xMax - 22, position.y, 22, position.height), new GUIContent("...", "Pick folder..."), new GUIStyle(GUI.skin.button) { padding = new RectOffset(2, 2, 2, 2) }))
                 {
 
                     var path =
