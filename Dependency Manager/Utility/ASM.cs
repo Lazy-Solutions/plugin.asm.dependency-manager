@@ -20,7 +20,7 @@ namespace plugin.asm.dependency_manager.Utility
         /// <summary>Gets the current version of ASM.</summary>
         public static string version => GetVersion();
 
-        const string versionFile = "Assets/AdvancedSceneManager/System/Dependency Manager/Resources/AdvancedSceneManager/version.txt";
+        const string versionFile = "Assets/AdvancedSceneManager/Dependency Manager/Resources/AdvancedSceneManager/version.txt";
         const string versionResource = "AdvancedSceneManager/version";
 
         static string GetVersion()
