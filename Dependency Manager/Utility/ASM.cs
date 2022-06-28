@@ -49,10 +49,7 @@ namespace plugin.asm.dependency_manager.Utility
         internal const string pragma = "ASM";
 
         public static readonly Dependency[] dependencies = new Dependency[]
-        {
-            Dependency.OnGitPackage(packageName: "utility.lazy.coroutines", uri: "https://github.com/Lazy-Solutions/Unity.CoroutineUtility.git#asm").WithTooltip("Provides Monobehavior-less coroutines"),
-            Dependency.OnUnityPackage(packageName: "com.unity.editorcoroutines", version : "1.0.0" ).WithTooltip("Provides coroutines outside of play-mode"),
-        };
+        { };
 
         /// <summary>Gets if ASM is installed.</summary>
         public static bool IsInstalled()
