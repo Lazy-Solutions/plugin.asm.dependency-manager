@@ -9,8 +9,8 @@ namespace plugin.asm.dependency_manager.Utility
         [InitializeOnLoadMethod]
         static void OnLoad()
         {
-          _ = UnityEditor.PackageManager.Client.Remove("utility.lazy.coroutines");
-          _ = UnityEditor.PackageManager.Client.Add("com.unity.editorcoroutines@1.0");
+            _ = UnityEditor.PackageManager.Client.Add("com.unity.editorcoroutines@1.0");
+            _ = UnityEditor.PackageManager.Client.Remove("utility.lazy.coroutines");
         }
 
     }
