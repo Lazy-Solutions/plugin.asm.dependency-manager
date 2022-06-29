@@ -1,6 +1,5 @@
 ﻿#pragma warning disable IDE1006 // Naming Styles
 
-using System;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -12,10 +11,10 @@ namespace plugin.asm.dependency_manager.Utility
     public static class ASM
     {
 
-        public static event Action OnUninstalled;
+        //public static event Action OnUninstalled;
 
-        internal static void RaiseOnUninstalled() =>
-            OnUninstalled?.Invoke();
+        //internal static void RaiseOnUninstalled() =>
+        //    OnUninstalled?.Invoke();
 
         /// <summary>Gets the current version of ASM.</summary>
         public static string version => GetVersion();
@@ -47,9 +46,6 @@ namespace plugin.asm.dependency_manager.Utility
 
         internal const string thisAssembly = "plugin.asm.dependency-manager";
         internal const string pragma = "ASM";
-
-        public static readonly Dependency[] dependencies = new Dependency[]
-        { };
 
         /// <summary>Gets if ASM is installed.</summary>
         public static bool IsInstalled()

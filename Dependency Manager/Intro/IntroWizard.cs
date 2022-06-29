@@ -10,8 +10,15 @@ namespace plugin.asm.dependency_manager.Intro
     public class IntroWizard : WizardWindow
     {
 
+        public static bool didJustFinishInto
+        {
+            get => PlayerPrefs.GetInt("AdvancedSceneManager.Intro.didJustFinishIntro") == 1;
+            set => PlayerPrefs.SetInt("AdvancedSceneManager.Intro.didJustFinishIntro", value ? 1 : 0);
+        }
+
         public override WizardPage[] Pages { get; } = new WizardPage[]
         {
+            new WelcomePage(),
             new LinksPage(),
             new BlacklistPage(),
             new ProfilePage(),
@@ -19,6 +26,7 @@ namespace plugin.asm.dependency_manager.Intro
 
         public override void OnDone()
         {
+            didJustFinishInto = true;
             ScriptingDefineUtility.Set(ASM.pragma);
             Close();
         }
@@ -46,7 +54,7 @@ namespace plugin.asm.dependency_manager.Intro
 
         public static void RequestOpen(bool isMenuItem, bool isOnLoad, out bool isHandled)
         {
-            var e = new OnOpenArgs(isMenuItem, isOnLoad, DependencyManagerPage.hasJustInstalledDependencies);
+            var e = new OnOpenArgs(isMenuItem, isOnLoad, didJustFinishInto);
             OnRequestOpen?.Invoke(e);
             isHandled = e.isHandled;
         }
@@ -95,7 +103,10 @@ namespace plugin.asm.dependency_manager.Intro
         {
 
             if (instance)
+            {
                 instance.Show();
+                instance.Focus();
+            }
             else
             {
                 var w = GetWindow<IntroWizard>();

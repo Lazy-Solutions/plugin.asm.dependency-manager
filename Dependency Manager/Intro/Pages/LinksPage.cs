@@ -30,7 +30,7 @@ namespace plugin.asm.dependency_manager.Intro
             GUILayout.Label("Offline documentation is available in pdf format, but please note that it is not always up-to-date with online version.", label);
 
             LinkButton("Offline documentation:", "Assets/AdvancedSceneManager/Documentation.pdf", onClick: () => EditorGUIUtility.PingObject(AssetDatabase.LoadAssetAtPath<Object>("Assets/AdvancedSceneManager/Documentation.pdf")));
-            LinkButton("Online documentation:", "https://github.com/Lazy-Solutions/AdvancedSceneManager/blob/main/docs/readme.md");
+            LinkButton("Online documentation:", "https://lazy-solutions.github.io/AdvancedSceneManager");
 
             GUILayout.Label("Patches", boldLabel);
             GUILayout.Label("Patches are smaller updates that are provided in-between the larger asset store updates. It is not required to install these, but it might be good idea if you experience or wish to avoid bugs. They might sometimes include features.", label);
