@@ -12,7 +12,6 @@ namespace plugin.asm.dependency_manager.Intro
 
         public override WizardPage[] Pages { get; } = new WizardPage[]
         {
-            new DependencyManagerPage(),
             new LinksPage(),
             new BlacklistPage(),
             new ProfilePage(),
